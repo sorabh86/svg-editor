@@ -3613,8 +3613,7 @@ TODOS
 				$.select('Select an image type for export: ', [
 					// See http://kangax.github.io/jstests/toDataUrl_mime_type_test/ for a useful list of MIME types and browser support
 					// 'ICO', // Todo: Find a way to preserve transparency in SVG-Edit if not working presently and do full packaging for x-icon; then switch back to position after 'PNG'
-					'PNG',
-					'JPEG', 'BMP', 'WEBP', 'PDF'
+					'PNG', 'SVG' 'JPEG', 'BMP', 'WEBP', 'PDF'
 				], function (imgType) { // todo: replace hard-coded msg with uiStrings.notification.
 					if (!imgType) {
 						return;
@@ -3647,6 +3646,8 @@ TODOS
 							openExportWindow();
 						}
 						svgCanvas.exportPDF(exportWindowName);
+					} else if(imgType === 'SVG') {
+						console.log('SVG export');
 					}
 					else {
 						if (!customExportImage) {
