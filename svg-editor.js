@@ -1077,7 +1077,7 @@ TODOS
 						$.pref('save_notice_done', 'all');
 					}
 					if (done !== 'part') {
-						win.alert(note);
+						window.alert(note);
 					}
 				}
 			};
@@ -2225,7 +2225,7 @@ TODOS
 //					console.log('l', $(this).css('left'));
 //				});
 
-//				var scale = .75;
+				var scale = 1;
 
 				var hidden_ps = elems.parents(':hidden');
 				hidden_ps.css('visibility', 'hidden').show();
@@ -2369,7 +2369,7 @@ TODOS
 //					}
 				};
 
-				/*var rule_elem = $('#tool_size_rules');
+				var rule_elem = $('#tool_size_rules');
 				if (!rule_elem.length) {
 					rule_elem = $('<style id="tool_size_rules"></style>').appendTo('head');
 				} else {
@@ -2399,7 +2399,7 @@ TODOS
 					+ ' #svg_editor .ui-slider {' + prefix + 'transform: scale(' + (1/scale) + ');}' // Hack for sliders
 					);
 					rule_elem.text(styleStr);
-				}*/
+				}
 
 				setFlyoutPositions();
 			};
@@ -3613,7 +3613,8 @@ TODOS
 				$.select('Select an image type for export: ', [
 					// See http://kangax.github.io/jstests/toDataUrl_mime_type_test/ for a useful list of MIME types and browser support
 					// 'ICO', // Todo: Find a way to preserve transparency in SVG-Edit if not working presently and do full packaging for x-icon; then switch back to position after 'PNG'
-					'PNG', 'SVG' 'JPEG', 'BMP', 'WEBP', 'PDF'
+					'PNG',
+					'JPEG', 'BMP', 'WEBP', 'PDF'
 				], function (imgType) { // todo: replace hard-coded msg with uiStrings.notification.
 					if (!imgType) {
 						return;
@@ -3646,8 +3647,6 @@ TODOS
 							openExportWindow();
 						}
 						svgCanvas.exportPDF(exportWindowName);
-					} else if(imgType === 'SVG') {
-						console.log('SVG export');
 					}
 					else {
 						if (!customExportImage) {
