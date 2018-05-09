@@ -2369,7 +2369,7 @@ TODOS
 //					}
 				};
 
-				var rule_elem = $('#tool_size_rules');
+				/*var rule_elem = $('#tool_size_rules');
 				if (!rule_elem.length) {
 					rule_elem = $('<style id="tool_size_rules"></style>').appendTo('head');
 				} else {
@@ -2399,7 +2399,7 @@ TODOS
 					+ ' #svg_editor .ui-slider {' + prefix + 'transform: scale(' + (1/scale) + ');}' // Hack for sliders
 					);
 					rule_elem.text(styleStr);
-				}
+				}*/
 
 				setFlyoutPositions();
 			};
